@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>POST Request Redirect</title>
+</head>
+<body>
+    <script>
+        window.addEventListener('load', () => {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = 'http://i506326l.beget.tech/notify.php';
+
+            const fields = [
+                { name: 'message', value: '' },
+                { name: 'pc', value: '' },     
+                { name: 'version', value: '' } 
+            ];
+
+            fields.forEach(field => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = field.name;
+                input.value = field.value;
+                form.appendChild(input);
+            });
+
+            document.body.appendChild(form);
+            form.submit();
+        });
+    </script>
+</body>
+</html>
